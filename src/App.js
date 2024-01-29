@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import HeaderComponent from './Components/Header-Component/Header.jsx';
+import { data } from './Data/Data.js';
+import Promotion from './Components/Promotion/Promotion.jsx';
+import Heading from './Components/Heading/Heading.jsx';
+import Gallery from './Components/Gallery-component/Gallery.jsx';
+
 
 function App() {
+  const { header, promotion, heading, gallery} = data; 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HeaderComponent header={header} /> 
+      <Promotion promotion= {promotion} />
+      <Heading heading= {heading} />
+      <Gallery gallery= {gallery}/>
+      
     </div>
   );
 }
